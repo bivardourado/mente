@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "//bivardourado.github.io/mente/static/css/main.85dbb4f3.css",
+    "main.js": "//bivardourado.github.io/mente/static/js/main.5ee94e99.js",
+    "static/js/453.ea3bdddf.chunk.js": "//bivardourado.github.io/mente/static/js/453.ea3bdddf.chunk.js",
+    "static/media/back.png": "//bivardourado.github.io/mente/static/media/back.28b1489a44025911e997.png",
+    "index.html": "//bivardourado.github.io/mente/index.html",
+    "main.85dbb4f3.css.map": "//bivardourado.github.io/mente/static/css/main.85dbb4f3.css.map",
+    "main.5ee94e99.js.map": "//bivardourado.github.io/mente/static/js/main.5ee94e99.js.map",
+    "453.ea3bdddf.chunk.js.map": "//bivardourado.github.io/mente/static/js/453.ea3bdddf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85dbb4f3.css",
+    "static/js/main.5ee94e99.js"
+  ]
+}
