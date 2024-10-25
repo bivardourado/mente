@@ -1,0 +1,34 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Espaça igualmente os itens: texto à esquerda, ícones à direita */
+    align-items: center; /* Centraliza verticalmente os elementos */
+    padding: 10px;
+    background-color: #1d0c8e; /* Cor de fundo do footer */
+    width: 100%; /* Faz o footer ocupar a largura total da página */
+    position: fixed; /* Faz o footer ficar fixo na parte inferior da janela */
+    bottom: 0; /* Fixa o footer na parte inferior */
+    left: 0; /* Garante que o footer comece da borda esquerda */
+}
+
+.footer-text {
+    flex-grow: 1; /* O texto ocupa o espaço disponível no layout flex */
+    text-align: center; /* Centraliza o texto */
+    font-size: 14px;
+    color: white;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: flex-end; /* Ícones à direita */
+}
+
+.footer-container a {
+    color: white; /* Cor dos links */
+    margin-left: 15px; /* Margem entre os ícones */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 24px; /* Tamanho dos ícones */
+}
+
+.footer-container a:hover {
+    color: #61dafb; /* Cor dos links ao passar o mouse */
+}
