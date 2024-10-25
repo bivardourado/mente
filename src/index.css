@@ -1,7 +1,7 @@
 /* styles.css */
 body {
   
-  background-image: url('./image/backk.png'); /* Caminho para a sua imagem */
+  background-image: url('./image/back.png'); /* Caminho para a sua imagem */
   background-size: cover; /* Faz a imagem cobrir toda a área da tela */
   background-position: center; /* Centraliza a imagem */
   background-repeat: no-repeat; /* Impede que a imagem se repita */
