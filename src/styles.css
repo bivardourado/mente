@@ -1,9 +1,8 @@
 body {
     background-color: #e0f2f1; /* Verde água quase branco */
-    height: 100vh; 
+    min-height: 100vh; 
     margin: 0; 
     position: relative;
-    overflow-x: hidden;
 }
 
 body::before {
@@ -91,8 +90,7 @@ button {
     padding: 10px;
     background-color: #282c34; 
     width: 100%;
-    position: fixed; 
-    bottom: 0; 
+    margin-top: 40px; /* Garante espaço antes do rodapé */
 }
 
 @media (max-width: 768px) {
