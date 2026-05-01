@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './styles.css'; // Importe o arquivo CSS
 import Footer from './Footer'; // Importe o componente Footer
 import Header from './Header'; // Importe o componente Header
+import qrcode from './image/qrcode.png'; // Importe o QR Code
 
 function NumberGame() {
   const [result, setResult] = useState(null);
@@ -17,6 +18,12 @@ function NumberGame() {
       numeroPar = Math.floor(Math.random() * 100) + 2;
     } while (numeroPar % 2 !== 0);
     return numeroPar;
+  };
+
+  const copiarPix = () => {
+    const pixKey = "87999695655";
+    navigator.clipboard.writeText(pixKey);
+    alert("Chave Pix copiada!");
   };
 
   const iniciarJogo = () => {
@@ -49,7 +56,7 @@ function NumberGame() {
         mostrarResultado(); // Chama mostrarResultado apenas no case 5
         return;
       case 6:
-        setMessage("Gostou? Se divirta o quanto quiser. Aproveitando, estou criando esses projetos, até consegui um trabalho em tecnologia. Aceito doações pelo trabalho. Meu pix é 87 9 9969 5655.");
+        setMessage("Gostou? Se divirta o quanto quiser. Aproveitando, estou criando esses projetos, até consegui um trabalho em tecnologia.");
         setResult(null)  // No case 6, apenas exibe a mensagem
         break;
       default:
@@ -99,7 +106,17 @@ function NumberGame() {
           {result !== null && <h2 className="big-number">{result / 2}</h2>}
 
           {step === 7 && (
-            <button onClick={reiniciarJogo}>Quero jogar outra vez</button>
+            <div style={{ textAlign: 'center', marginTop: '20px' }}>
+              <p>Gostou? Aceito doações pelo trabalho!</p>
+              <p><strong>Pix: 87 9 9969 5655</strong></p>
+              <button onClick={copiarPix} style={{ fontSize: '18px', padding: '5px 15px', marginBottom: '10px' }}>
+                Copiar Chave Pix
+              </button>
+              <br />
+              <img src={qrcode} alt="QR Code Pix" style={{ width: '200px', borderRadius: '10px', marginTop: '10px' }} />
+              <br />
+              <button onClick={reiniciarJogo}>Quero jogar outra vez</button>
+            </div>
           )}
           {step < 7 && (
             <button onClick={avancarPasso}>Próximo Passo</button>

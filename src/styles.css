@@ -1,12 +1,24 @@
 body {
-    background-color: #2a0b03; 
-  
-    background-image: url('./image/back.png');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-color: #e0f2f1; /* Verde água quase branco */
     height: 100vh; 
     margin: 0; 
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./image/back.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert(1) opacity(0.15); /* Inverte para fórmulas ficarem escuras e suaviza */
+    z-index: -1;
 }
 
 h1 {
