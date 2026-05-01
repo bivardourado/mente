@@ -106,16 +106,56 @@ function NumberGame() {
           {result !== null && <h2 className="big-number">{result / 2}</h2>}
 
           {step === 7 && (
-            <div style={{ textAlign: 'center', marginTop: '20px' }}>
-              <p>Gostou? Aceito doações pelo trabalho!</p>
-              <p><strong>Pix: 87 9 9969 5655</strong></p>
-              <button onClick={copiarPix} style={{ fontSize: '18px', padding: '5px 15px', marginBottom: '10px' }}>
+            <div style={{ 
+              textAlign: 'center', 
+              marginTop: '20px', 
+              padding: '20px', 
+              backgroundColor: 'rgba(255, 255, 255, 0.9)', 
+              borderRadius: '15px', 
+              boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+              maxWidth: '400px',
+              margin: '20px auto'
+            }}>
+              <p style={{ fontSize: '1.2rem', color: '#333' }}>Gostou? Aceito doações pelo trabalho!</p>
+              <p style={{ fontSize: '1.1rem', margin: '10px 0' }}><strong>Pix: 87 9 9969 5655</strong></p>
+              
+              <button 
+                onClick={copiarPix} 
+                style={{ 
+                  fontSize: '20px', 
+                  padding: '12px 25px', 
+                  backgroundColor: '#4d6150', 
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  transition: 'transform 0.2s',
+                  marginBottom: '15px'
+                }}
+                onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+                onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+              >
                 Copiar Chave Pix
               </button>
+              
               <br />
-              <img src={qrcode} alt="QR Code Pix" style={{ width: '200px', borderRadius: '10px', marginTop: '10px' }} />
+              <img src={qrcode} alt="QR Code Pix" style={{ width: '180px', borderRadius: '10px', marginBottom: '15px' }} />
               <br />
-              <button onClick={reiniciarJogo}>Quero jogar outra vez</button>
+              
+              <button 
+                onClick={reiniciarJogo} 
+                style={{ 
+                  fontSize: '18px', 
+                  padding: '10px 20px', 
+                  background: 'none', 
+                  color: '#4d6150',
+                  border: '2px solid #4d6150',
+                  borderRadius: '8px',
+                  cursor: 'pointer'
+                }}
+              >
+                Quero jogar outra vez
+              </button>
             </div>
           )}
           {step < 7 && (
