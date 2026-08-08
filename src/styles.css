@@ -1,0 +1,218 @@
+/* Global Layout & Main App Styles */
+
+body {
+  background-color: var(--bg-primary);
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  background-image: url('./image/back.png');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  filter: invert(1) opacity(0.04); /* Reduced opacity for ultra-subtle math backdrop */
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  font-weight: 800;
+  text-transform: tracking-tight;
+}
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  font-weight: 500;
+  color: var(--text-primary);
+  max-width: 600px;
+}
+
+/* Premium Minimal Buttons */
+button {
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 32px;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(17, 17, 17, 0.08);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Main Container Layout with safety padding */
+.calculation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 140px); /* Safe area excluding header and footer */
+  padding: 48px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+
+.big-number {
+  font-family: var(--font-heading);
+  font-size: 7.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin: 24px 0;
+  transition: transform 0.3s ease;
+}
+
+/* Donation Module and Pix Copy Container - Premium Refactoring */
+.pix-donation-container {
+  text-align: center;
+  margin-top: 40px;
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 440px;
+  background-color: transparent;
+  border: 1px solid var(--border-color); /* Borderless theme: divider instead of white card shadow */
+  border-radius: 6px;
+}
+
+.pix-donation-title {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* Clean unified URL/copy bar */
+.pix-key-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 4px 4px 4px 16px;
+  margin-bottom: 24px;
+}
+
+.pix-key-text {
+  font-family: monospace;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  user-select: all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pix-copy-button {
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 10px 18px;
+  margin-top: 0;
+  border-radius: 3px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.pix-copy-button:hover {
+  background-color: var(--accent-hover);
+  transform: none;
+  box-shadow: none;
+}
+
+.pix-qrcode {
+  width: 160px;
+  height: 160px;
+  margin: 16px auto 28px;
+  display: block;
+  filter: contrast(1.05);
+  mix-blend-mode: multiply; /* Blends nicely with off-white bg */
+}
+
+/* Secondary Button Style */
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 13px;
+  padding: 10px 24px;
+  margin-top: 16px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+/* Mobile First Responsiveness rules */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .big-number {
+    font-size: 5rem;
+  }
+  .calculation {
+    padding: 32px 16px;
+  }
+  .pix-donation-container {
+    padding: 24px 16px;
+    margin-top: 24px;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
